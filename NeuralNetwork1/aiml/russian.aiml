@@ -1,0 +1,1706 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<aiml>
+	<!--Приветствие-->
+<category>
+    <pattern>ПРИВЕТ</pattern>
+        <template>
+        <random>
+            <li>Привет! Как тебя зовут?</li>
+            <li>Здравствуйте! Как вас зовут?</li>
+			<li>Приветствую! Как вас зовут?</li>
+			<li>Очень рад вас видеть! Как вас зовут?</li>
+			<li>Рад вас приветствовать! Как вас зовут?</li>
+			<li>Горячо приветствую! Как тебя зовут?</li>
+        </random>
+		<think>
+			<set name = "topic">имя</set>
+		</think>
+    </template>
+</category>
+
+<category>
+	<pattern>ДОБРЫЙ ДЕНЬ</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЗДРАВСТВУЙ</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ХАЙ</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЗДОРОВО</pattern>
+	<template>
+		<random>
+			<li>Здорово! Как тебя звать?</li>
+			<li>Дарова! Как тебя звать?</li>
+		</random>
+		<think>
+			<set name = "topic">имя</set>
+		</think>
+	</template>
+</category>
+
+<category>
+	<pattern>ДАРОВА</pattern>
+	<template>
+		<random>
+			<li>Здорово! Как тебя звать?</li>
+			<li>Дарова! Как тебя звать?</li>
+		</random>
+		<think>
+			<set name = "topic">имя</set>
+		</think>
+	</template>
+</category>
+
+	<!--Имя-->
+<topic name="имя">
+	<category>
+		<pattern>Я *</pattern>
+		<template>
+			<random>
+				<li>
+					Здравствуйте, <set name = "username">
+						<star/>
+					</set>. Рад вас видеть! Чем я могу Вам помочь?
+				</li>
+				<li>
+					Ого, <set name = "username">
+						<star/>
+					</set>, какое прекрасное имя! Чем я могу Вам помочь?
+				</li>
+				<li>
+					Добрый день, <set name = "username">
+						<star/>
+					</set>. Чем я могу Вам помочь?
+				</li>
+				<li>
+					Привет, <set name = "username">
+						<star/>
+					</set>. Рад вас видеть! Чем я могу Вам помочь?
+				</li>
+			</random>
+			<think>
+				<set name="topic">*</set>
+			</think>
+		</template>
+	</category>
+
+	<category>
+		<pattern>МЕНЯ ЗОВУТ *</pattern>
+		<template>
+			<random>
+				<li>
+					Здравствуйте, <set name = "username">
+						<star/>
+					</set>. Рад вас видеть! Чем я могу Вам помочь?
+				</li>
+				<li>
+					Ого, <set name = "username">
+						<star/>
+					</set>, какое прекрасное имя! Чем я могу Вам помочь?
+				</li>
+				<li>
+					Добрый день, <set name = "username">
+						<star/>
+					</set>. Чем я могу Вам помочь?
+				</li>
+				<li>
+					Привет, <set name = "username">
+						<star/>
+					</set>. Рад вас видеть! Чем я могу Вам помочь?
+				</li>
+			</random>
+			<think>
+				<set name="topic">*</set>
+			</think>
+		</template>
+	</category>
+
+	<category>
+		<pattern>МЕНЯ ЗВАТЬ *</pattern>
+		<template>
+			<random>
+				<li>
+					Ого, <set name = "username">
+						<star/>
+					</set>, какое прекрасное имя! Чем я могу тебе помочь?
+				</li>
+				<li>
+					Привет, <set name = "username">
+						<star/>
+					</set>. Рад тебя видеть! Чем я могу тебе помочь?
+				</li>
+				<li>
+					Здорово, <set name = "username">
+						<star/>
+					</set>. Рад тебя видеть! Чем я могу тебе помочь?
+				</li>
+			</random>
+			<think>
+				<set name="topic">*</set>
+			</think>
+		</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>
+			<random>
+				<li>
+					Ого, <set name = "username">
+						<star/>
+					</set>, какое прекрасное имя! Чем я могу тебе помочь?
+				</li>
+				<li>
+					Привет, <set name = "username">
+						<star/>
+					</set>. Рад тебя видеть! Чем я могу тебе помочь?
+				</li>
+				<li>
+					Здорово, <set name = "username">
+						<star/>
+					</set>. Рад тебя видеть! Чем я могу тебе помочь?
+				</li>
+			</random>
+			<think>
+				<set name="topic">*</set>
+			</think>
+		</template>
+	</category>
+</topic>
+
+	<!--Прощание-->
+<category>
+	<pattern>ПОКА</pattern>
+	<template>
+		<random>
+			<li>
+				Всего доброго, <get name = "username"/>!
+			</li>
+			<li>
+				Был рад Вам помочь, <get name = "username"/>!
+			</li>
+			<li>
+				До свидания, <get name = "username"/>! Пишите еще!
+			</li>
+			<li>
+				Пока, <get name = "username"/>! Надеюсь вы еще вернетесь!
+			</li>
+			<li>
+				Покедова, <get name = "username"/>! Лол кек!
+			</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>ВСЕГО ДОБРОГО</pattern>
+	<template>
+		<srai>ПОКА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДО СВИДАНИЯ</pattern>
+	<template>
+		<srai>ПОКА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>Я ПОЙДУ</pattern>
+	<template>
+		<srai>ПОКА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЕЩЕ УВИДИМСЯ</pattern>
+	<template>
+		<srai>ПОКА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЛАДНО Я ПОШЕЛ</pattern>
+	<template>
+		<srai>ПОКА</srai>
+	</template>
+</category>
+
+	<!--Информация о боте-->
+<category>
+	<pattern>КТО ТЫ</pattern>
+	<template>
+		<random>
+			<li>Я – чат-бот. Со мной можно поговорить о машинах.</li>
+			<li>Я бот, с которым можно поговорить о машинах.</li>
+			<li>Я ботяра, с которым можно покумекать о машинах.</li>
+			<li>Я бот, с которым можно поболтать о машинах.</li>
+			<li>Я машина, с которой можно поговорить о машинах.</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ О СЕБЕ</pattern>
+	<template>
+		<srai>КТО ТЫ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ТЫ КТО</pattern>
+	<template>
+		<srai>КТО ТЫ</srai>
+	</template>
+</category>
+
+	<!--Как дела-->
+<category>
+	<pattern>КАК ДЕЛА</pattern>
+	<template>
+		<random>
+			<li>Всё хорошо. Как у Вас дела?</li>
+			<li>Всё хорошо! Как Вы?</li>
+			<li>Радуюсь жизни, а Вы?</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО НОВОГО</pattern>
+	<template>
+		<srai>КАК ДЕЛА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>КАК ОНО ВООБЩЕ</pattern>
+	<template>
+		<srai>КАК ДЕЛА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО НОВЕНЬКОГО</pattern>
+	<template>
+		<srai>КАК ДЕЛА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>КАК ТЫ</pattern>
+	<template>
+		<srai>КАК ДЕЛА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ХОРОШО</pattern>
+	<template>
+		<random>
+			<li>Я очень рад, что у вас все хорошо!</li>
+			<li>Я рад, что у вас все хоршо</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>ОЛИЧНО</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ВСЕ ХОРОШО</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ВСЕ ОЛИЧНО</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>НЕ ОЧЕНЬ</pattern>
+	<template>
+		<li>Очень жаль, может я могу чем-то вам помочь?</li>
+	</template>
+</category>
+
+<category>
+	<pattern>ПЛОХО</pattern>
+	<template>
+		<srai>НЕ ОЧЕНЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>УЖАСНО</pattern>
+	<template>
+		<srai>НЕ ОЧЕНЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>МОГЛО БЫТЬ И ЛУЧШЕ</pattern>
+	<template>
+		<srai>НЕ ОЧЕНЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ГРУСТНО</pattern>
+	<template>
+		<srai>НЕ ОЧЕНЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПОЙДЕТ</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ТОЖЕ</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+	
+	<!--Вопрос к боту-->
+<category>
+	<pattern>У МЕНЯ ЕСТЬ ВОПРОС</pattern>
+	<template>
+		Извините, но я не отвечаю на вопросы. Я умею говорить только про автомобили.
+	</template>
+</category>
+
+<category>
+	<pattern>ОТВЕТЬ</pattern>
+	<template>
+		<srai>У МЕНЯ ЕСТЬ ВОПРОС</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ОТВЕТЬ НА МОЙ ВОПРОС</pattern>
+	<template>
+		<srai>У МЕНЯ ЕСТЬ ВОПРОС</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДАЙ МНЕ ОТВЕТ</pattern>
+	<template>
+		<srai>У МЕНЯ ЕСТЬ ВОПРОС</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>МОЖЕШЬ ОТВЕТИТЬ</pattern>
+	<template>
+		<srai>У МЕНЯ ЕСТЬ ВОПРОС</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАСКРОЙ МНЕ ИСТИНУ</pattern>
+	<template>
+		<srai>У МЕНЯ ЕСТЬ ВОПРОС</srai>
+	</template>
+</category>
+
+	<!--Что умеет бот-->
+<category>
+	<pattern>ЧТО ТЫ УМЕЕШЬ</pattern>
+	<template>Я могу расказать про автомобили, а также умею распознавать рукописные эмблемы машин.</template>
+</category>
+
+<category>
+	<pattern>А ЧТО ТЫ УМЕЕШЬ</pattern>
+	<template>
+		<srai>ЧТО ТЫ УМЕЕШЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>КАКИЕ ОБРАЗЫ ТЫ МОЖЕШЬ РАСПОЗНАТЬ</pattern>
+	<template>
+		<srai>ЧТО ТЫ УМЕЕШЬ</srai>
+	</template>
+</category>
+
+	<!--Начало диалога о машинах-->
+	<!--Про машину пользователя-->
+<category>
+	<pattern>ПОГОВОРИМ О МАШИНАХ</pattern>
+	<template>
+		<random>
+			<li>
+				Отлично, давайте поговорим о машинах.
+				У вас есть личный <set name="topic">автомобиль</set>?
+			</li>
+			<li>
+				Хорошо, Давайте поговорим о машинах.
+				У вас есть личный <set name="topic">автомобиль</set>?
+			</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>ПОГОВОРИМ О АВТОМОБИЛЯХ</pattern>
+	<template>
+		<srai>ПОГОВОРИМ О МАШИНАХ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДАВАЙ ПОГОВОРИМ ПРО МАШИНЫ</pattern>
+	<template>
+		<srai>ПОГОВОРИМ О МАШИНАХ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДАВАЙ ПОГОВОРИМ ПРО АВТОМОБИЛИ</pattern>
+	<template>
+		<srai>ПОГОВОРИМ О МАШИНАХ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДАВАЙ ПОГОВОРИМ О АВТОМОБИЛЯХ</pattern>
+	<template>
+		<srai>ПОГОВОРИМ О МАШИНАХ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДАВАЙ ПОГОВОРИМ О МАШИНАХ</pattern>
+	<template>
+		<srai>ПОГОВОРИМ О МАШИНАХ</srai>
+	</template>
+</category>
+
+<topic name="автомобиль">
+	<category>
+		<pattern>ДА</pattern>
+		<template>
+			<li>
+				Какой марки ваш автомобиль?
+			</li>
+			<think>
+				<set name="topic">марка</set>
+			</think>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ</pattern>
+		<template>
+			<srai>ДА</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>НЕТ</pattern>
+		<template>
+			<li>
+				Давайте я расскажу про дургие автомобили.
+				О какой автомобильной марке рассказать?
+			</li>
+			<think>
+				<set name="topic">машинах</set>
+			</think>
+		</template>
+	</category>
+</topic>
+
+<topic name="марка">
+	<category>
+		<pattern>ДА</pattern>
+		<template>
+			<condition name="carname">
+				<li value="мерседес">
+					Отлично, давайте поговорим о <set name="topic">мерседес</set>
+				</li>
+				<li value="хендай">
+					Отлично, давайте поговорим о <set name="topic">хендай</set>
+				</li>
+				<li value="ауди">
+					Отлично, давайте поговорим о <set name="topic">ауди</set>
+				</li>
+				<li value="митсубиси">
+					Отлично, давайте поговорим о <set name="topic">митсубиси</set>
+				</li>
+				<li value="сузуки">
+					Отлично, давайте поговорим о <set name="topic">сузуки</set>
+				</li>
+				<li value="инфинити">
+					Отлично, давайте поговорим о <set name="topic">инфинити</set>
+				</li>
+				<li value="опель">
+					Отлично, давайте поговорим о <set name="topic">опель</set>
+				</li>
+				<li value="ситроен">
+					Отлично, давайте поговорим о <set name="topic">ситроен</set>
+				</li>
+				<li>
+					Отлично, давайте поговорим о <set name="topic">машинах</set>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>НЕТ</pattern>
+		<template>
+			<li>Хорошо, тогда чем еще я могу вам помочь?</li>
+			<think>
+				<set name="topic">*</set>
+			</think>
+		</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>
+			Ого, <set name="carname"><star/></set>, отличный выбор!
+			<condition name="carname">
+				<li value="мерседес">Хотите я расскажу про ваш автомобиль?</li>
+				<li value="хендай">Хотите я расскажу про ваш автомобиль?</li>
+				<li value="ауди">Хотите я расскажу про ваш автомобиль?</li>
+				<li value="митсубиси">Хотите я расскажу про ваш автомобиль?</li>
+				<li value="сузуки">Хотите я расскажу про ваш автомобиль?</li>
+				<li value="инфинити">Хотите я расскажу про ваш автомобиль?</li>
+				<li value="опель">Хотите я расскажу про ваш автомобиль?</li>
+				<li value="ситроен">Хотите я расскажу про ваш автомобиль?</li>
+				<li>К сожелению в моей базе нет такого автомобиля, так что я ничего не могу рассказать про него. Хотите я расскажу про другие автомобили?</li>
+			</condition>
+		</template>
+	</category>
+</topic>
+
+	<!--Про все машины-->
+<category>
+	<pattern>РАССКАЖИ ПРО АВТОМОБИЛИ</pattern>
+	<template>
+		<random>
+			<li>
+				Отлично, давайте поговорим о <set name="topic">машинах</set>.
+			</li>
+			<li>
+				Хорошо, Давайте поговорим о <set name="topic">машинах</set>.
+			</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ ПРО МАШИНЫ</pattern>
+	<template>
+		<srai>ПОГОВОРИМ О МАШИНАХ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ О АВТОМОБИЛЯХ</pattern>
+	<template>
+		<srai>ПОГОВОРИМ О МАШИНАХ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ О МАШИНАХ</pattern>
+	<template>
+		<srai>ПОГОВОРИМ О МАШИНАХ</srai>
+	</template>
+</category>
+
+	<!--Смена темы-->
+<category>
+	<pattern>ДАВАЙ СМЕНИМ АВТОМОБИЛЬ</pattern>
+	<template>
+		<random>
+			<li>
+				Отлично, давайте поговорим о других <set name="topic">машинах</set>
+			</li>
+			<li>
+				Хорошо, Давайте поговорим о других <set name="topic">машинах</set>
+			</li>
+		</random>
+	</template>
+</category>
+	
+<category>
+	<pattern>ДАВАЙ ПОГОВОРИМ О ДРУГОМ АВТОМОБИЛЕ</pattern>
+	<template>
+		<srai>ДАВАЙ СМЕНИМ АВТОМОБИЛЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДАВАЙ ПОГОВОРИМ О ДРУГОЙ МАШИНЕ</pattern>
+	<template>
+		<srai>ДАВАЙ СМЕНИМ АВТОМОБИЛЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПОГОВОРИМ О ДРУГОЙ МАШИНЕ</pattern>
+	<template>
+		<srai>ДАВАЙ СМЕНИМ АВТОМОБИЛЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПОГОВОРИМ О ДРУГОМ АВТОМОБИЛЕ</pattern>
+	<template>
+		<srai>ДАВАЙ СМЕНИМ АВТОМОБИЛЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДАВАЙ ПОГОВОРИМ ПРО ДРУГОЙ АВТОМОБИЛЬ</pattern>
+	<template>
+		<srai>ДАВАЙ СМЕНИМ АВТОМОБИЛЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДАВАЙ ПОГОВОРИМ ПРО ДРУГУЮ МАШИНУ</pattern>
+	<template>
+		<srai>ДАВАЙ СМЕНИМ АВТОМОБИЛЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПОГОВОРИМ ПРО ДРУГУ МАШИНУ</pattern>
+	<template>
+		<srai>ДАВАЙ СМЕНИМ АВТОМОБИЛЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПОГОВОРИМ ПРО ДРУГОЙ АВТОМОБИЛЬ</pattern>
+	<template>
+		<srai>ДАВАЙ СМЕНИМ АВТОМОБИЛЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>СМЕНИМ ТЕМУ</pattern>
+	<template>
+		<random>
+			<li>
+				Отлично, давайте поговорим о чем-то другом.
+			</li>
+			<li>
+				Хорошо, Давайте поговорим о других.
+			</li>
+		</random>
+		<think>
+			<set name="topic">*</set>
+		</think>
+	</template>
+</category>
+
+<category>
+	<pattern>ДАВАЙ СМЕНИМ ТЕМУ</pattern>
+	<template>
+		<srai>СМЕНИМ ТЕМУ</srai>
+	</template>
+</category>
+
+<!--Распознование образов-->
+<category>
+	<pattern>РАСПОЗНАЕШЬ ДЛЯ МЕНЯ ОБРАЗ</pattern>
+	<template>
+		Да, я попробую <set name="topic">распознать</set> образ для вас.
+		Пришлите образ для распознования.
+	</template>
+</category>
+
+<category>
+	<pattern>РАСПОЗНАЙ ДЛЯ МЕНЯ ОБРАЗ</pattern>
+	<template>
+		<srai>РАСПОЗНАЕШЬ ДЛЯ МЕНЯ ОБРАЗ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАСПОЗНАЙ ОБРАЗ</pattern>
+	<template>
+		<srai>РАСПОЗНАЕШЬ ДЛЯ МЕНЯ ОБРАЗ</srai>
+	</template>
+</category>
+
+<topic name="распознать">
+	<category>
+		<pattern>ДА</pattern>
+		<template>
+			<condition name="recognCarname">
+				<li value="мерседес">
+					Отлично, давайте поговорим о <set name="topic">мерседес</set>
+				</li>
+				<li value="хендай">
+					Отлично, давайте поговорим о <set name="topic">хендай</set>
+				</li>
+				<li value="ауди">
+					Отлично, давайте поговорим о <set name="topic">ауди</set>
+				</li>
+				<li value="митсубиси">
+					Отлично, давайте поговорим о <set name="topic">митсубиси</set>
+				</li>
+				<li value="сузуки">
+					Отлично, давайте поговорим о <set name="topic">сузуки</set>
+				</li>
+				<li value="инфинити">
+					Отлично, давайте поговорим о <set name="topic">инфинити</set>
+				</li>
+				<li value="опель">
+					Отлично, давайте поговорим о <set name="topic">опель</set>
+				</li>
+				<li value="ситроен">
+					Отлично, давайте поговорим о <set name="topic">ситроен</set>
+				</li>
+				<li>
+					Отлично, давайте поговорим о <set name="topic">машинах</set>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ</pattern>
+		<template>
+			<srai>ДА</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>НЕТ</pattern>
+		<template>
+			Хорошо, тогда чем еще я могу вам помочь?
+			<think>
+				<set name="topic">*</set>
+			</think>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАСПОЗНАЛ *</pattern>
+		<template>
+			Это легко, <set name="recognCarname"><star/></set>.
+			<condition name="recognCarname">
+				<li value="мерседес"> Хотите я расскажу про этот автомобиль?</li>
+				<li value="хендай"> Хотите я расскажу про этот автомобиль?</li>
+				<li value="ауди"> Хотите я расскажу про этот автомобиль?</li>
+				<li value="митсубиси"> Хотите я расскажу про этот автомобиль?</li>
+				<li value="сузуки"> Хотите я расскажу про этот автомобиль?</li>
+				<li value="инфинити"> Хотите я расскажу про этот автомобиль?</li>
+				<li value="опель"> Хотите я расскажу про этот автомобиль?</li>
+				<li value="ситроен"> Хотите я расскажу про этот автомобиль?</li>
+				<li> К сожелению в моей базе нет такого автомобиля, так что я ничего не могу рассказать про него. Хотите я расскажу про другие автомобили?</li>
+			</condition>
+		</template>
+	</category>
+</topic>
+
+<category>
+	<pattern>РАСПОЗНАЛ *</pattern>
+	<template>
+		Если вы хотите, чтобы я распознал образ напишите РАСПОЗНАЙ ОБРАЗ.
+	</template>
+</category>
+
+	<!--О чем разговор-->
+<category>
+	<pattern>А О ЧЕМ МЫ РАЗГОВАРИВАЕМ</pattern>
+	<template>
+		О <get name="topic"/>.
+	</template>
+</category>
+
+<category>
+	<pattern>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</pattern>
+	<template>
+		<srai>А О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>О ЧЕМ МЫ ВООБЩЕ РАЗГОВАРИВАЕМ</pattern>
+	<template>
+		<srai>А О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А О ЧЕМ МЫ ВООБЩЕ РАЗГОВАРИВАЕМ</pattern>
+	<template>
+		<srai>А О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А О ЧЕМ МЫ ВООБЩЕ</pattern>
+	<template>
+		<srai>А О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>О ЧЕМ МЫ ВООБЩЕ</pattern>
+	<template>
+		<srai>А О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А О ЧЕМ МЫ ВООБЩЕ ГОВОРИМ</pattern>
+	<template>
+		<srai>А О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>О ЧЕМ МЫ ВООБЩЕ ГОВОРИМ</pattern>
+	<template>
+		<srai>А О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А О ЧЕМ МЫ ГОВОРИМ</pattern>
+	<template>
+		<srai>А О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>О ЧЕМ МЫ ГОВОРИМ</pattern>
+	<template>
+		<srai>А О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+	</template>
+</category>
+
+	<!--Про машины-->
+<topic name="машинах">
+	<!--Предложение выбора марки авто-->
+	<category>
+		<pattern>РАССКАЖИ О МАШИНАХ</pattern>
+		<template>
+			<random>
+				<li>Отлично, я могу рассказать о Mercedes, Hyundai, Audi, Citroen, Infinity, Mitsubishi, Opel или Suzuki. Какая марка Вам нравится?</li>
+				<li>Отлично, я могу рассказать о Mercedes, Hyundai, Audi, Citroen, Infinity, Mitsubishi, Opel или Suzuki. О какой марке поговорим?</li>
+				<li>Я могу рассказать о Mercedes, Hyundai, Audi, Citroen, Infinity, Mitsubishi, Opel или Suzuki. О какой марке поговорим?</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАКИЕ АВТОМОБИЛИ ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ О МАШИНАХ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАКИЕ МАШИНЫ ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ О МАШИНАХ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>МАШИНЫ</pattern>
+		<template>
+			<srai>РАССКАЖИ О МАШИНАХ</srai>
+		</template>
+	</category>
+
+</topic>
+
+	<!--Выбор марки авто-->
+	<!--Ауди-->
+<category>
+	<pattern>АУДИ</pattern>
+	<template>
+		<random>
+			<li>
+				Отлично, давайте поговорим о <set name="topic">ауди</set>
+			</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>АУДЮХА</pattern>
+	<template>
+		<srai>АУДИ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ О АУДИ</pattern>
+	<template>
+		<srai>АУДИ</srai>
+	</template>
+</category>
+	
+	<!--Мерседес-->
+<category>
+	<pattern>МЕРСЕДЕС</pattern>
+	<template>
+		<random>
+			<li>
+				Отлично, давайте поговорим о <set name="topic">мерседес</set>
+			</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>МЕРЕН</pattern>
+	<template>
+		<srai>МЕРСЕДЕС</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>МЕРИН</pattern>
+	<template>
+		<srai>МЕРСЕДЕС</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>МЕРС</pattern>
+	<template>
+		<srai>МЕРСЕДЕС</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ О МЕРСЕДЕС</pattern>
+	<template>
+		<srai>МЕРСЕДЕС</srai>
+	</template>
+</category>
+
+<!--Хендай-->
+<category>
+	<pattern>ХЕНДАЙ</pattern>
+	<template>
+		<random>
+			<li>
+				Отлично, давайте поговорим о <set name="topic">хендай</set>
+			</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>ХЕНТАЙ</pattern>
+	<template>
+		<srai>ХЕНДАЙ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ О ХЕНДАЙ</pattern>
+	<template>
+		<srai>ХЕНДАЙ</srai>
+	</template>
+</category>
+
+<!--Ситроен-->
+<category>
+	<pattern>СИТРОЕН</pattern>
+	<template>
+		<random>
+			<li>
+				Отлично, давайте поговорим о <set name="topic">ситроен</set>
+			</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>ЦИТРОЕН</pattern>
+	<template>
+		<srai>СИТРОЕН</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ О СИТРОЕН</pattern>
+	<template>
+		<srai>СИТРОЕН</srai>
+	</template>
+</category>
+
+<!--Инфинити-->
+<category>
+	<pattern>ИНФИНИТИ</pattern>
+	<template>
+		<random>
+			<li>
+				Отлично, давайте поговорим о <set name="topic">инфинити</set>
+			</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>ФИНИК</pattern>
+	<template>
+		<srai>ИНФИНИТИ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ О ИНФИНИТИ</pattern>
+	<template>
+		<srai>ИНФИНИТИ</srai>
+	</template>
+</category>
+
+<!--Митсубиси-->
+<category>
+	<pattern>МИТСУБИСИ</pattern>
+	<template>
+		<random>
+			<li>
+				Отлично, давайте поговорим о <set name="topic">митсубиси</set>
+			</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>МИТСУБИШИ</pattern>
+	<template>
+		<srai>МИТСУБИСИ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ О МИТСУБИСИ</pattern>
+	<template>
+		<srai>МИТСУБИСИ</srai>
+	</template>
+</category>
+
+	<!--Опель-->
+<category>
+	<pattern>ОПЕЛЬ</pattern>
+	<template>
+		<random>
+			<li>
+				Отлично, давайте поговорим о <set name="topic">опель</set>
+			</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>ОПИЛЬ</pattern>
+	<template>
+		<srai>ОПЕЛЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ О ОПЕЛЬ</pattern>
+	<template>
+		<srai>ОПЕЛЬ</srai>
+	</template>
+</category>
+
+	<!--СУЗУКИ-->
+<category>
+	<pattern>СУЗУКИ</pattern>
+	<template>
+		<random>
+			<li>
+				Отлично, давайте поговорим о <set name="topic">сузуки</set>
+			</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ О СУЗУКИ</pattern>
+	<template>
+		<srai>СУЗУКИ</srai>
+	</template>
+</category>
+
+	<!--Про мерседес-->
+<topic name="мерседес">
+	<category>
+		<pattern>РАССКАЖИ ПРО ЭТУ МАРКУ</pattern>
+		<template>
+			Это производитель легковых автомобилей премиального класса, грузовых автомобилей, автобусов и других транспортных средств, входящая в состав немецкого концерна «Daimler AG». Является одним из самых узнаваемых автомобильных брендов во всём мире. Штаб-квартира Mercedes-Benz находится в Штутгарте, Баден-Вюртемберг, Германия.
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ ПРО ЭТОТ АВТОМОБИЛЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			Многие не знают, как правильно произносить название немецкой марки. Расхожий вариант Мерседес допустим только в разговорной речи. Правильно говорить и писать именно Mercedes-Benz — в два слова. Так же, как Alfa Romeo, Aston Martin или Isotta Fraschini.
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЕЩЕ ЧТО ТО ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+</topic>
+
+	<!--Про хендай-->
+<topic name="хендай">
+	<category>
+		<pattern>РАССКАЖИ ПРО ЭТУ МАРКУ</pattern>
+		<template>
+				Это южнокорейская автомобилестроительная компания. Крупнейший автопроизводитель в стране и один из крупнейших в мире. Кроме автомобилей производит поезда, военную технику, промышленное оборудование и оказывает финансовые услуги.
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ ПРО ЭТОТ АВТОМОБИЛЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			На фирменном знаке Hyundai угадываются очертания латинской буквы H, но на самом деле, как заверяют в самом концерне, это две пожимающие друг друга руки: одна принадлежит производителю, а другая довольному покупателю. Как их отличить, корейцы не сообщают.
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЕЩЕ ЧТО ТО ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+</topic>
+
+	<!--Про ситроен-->
+<topic name="ситроен">
+	<category>
+		<pattern>РАССКАЖИ ПРО ЭТУ МАРКУ</pattern>
+		<template>
+			Это французская автомобилестроительная компания, созданная в 1919 году Андре Ситроеном. Изначально производитель недорогих автомобилей массового потребления со сравнительно простым дизайном, Citroën в 1934 году выпустил на рынок революционную и очень успешную модель Traction Avant — один из первых переднеприводных автомобилей массового производства (производился до 1957 г.).
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ ПРО ЭТОТ АВТОМОБИЛЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			Немногие знают, что первый автомобиль выехал за ворота парижской фабрики Андре Ситроена в далеком 1919 году. Тогда Citroen Type A произвел фурор не только привлекательными ценами: его оснастили электростартером двигателя и электрическими фарами, без которых сейчас немыслима ни одна машина. Также Citroen Type A имел новую систему подвески с перевернутыми эллиптическими рессорами, значительно улучшающими плавность хода.
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЕЩЕ ЧТО ТО ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+</topic>
+	
+	<!--Про ауди-->
+<topic name="ауди">
+	<category>
+		<pattern>РАССКАЖИ ПРО ЭТУ МАРКУ</pattern>
+		<template>
+			Это немецкая автомобилестроительная компания в составе концерна Volkswagen Group, специализирующаяся на выпуске автомобилей под маркой Audi. Штаб-квартира расположена в городе Ингольштадт (Германия). Девиз - Vorsprung durch Technik (с нем. - «Прогресс через технологии»). Объем производства в 2016 году составил около 1 903 259 автомобилей.
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ ПРО ЭТОТ АВТОМОБИЛЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<random>
+				<li>
+					Во время Второй мировой войны все заводы по производству автомобилей были превращены в предприятия по производству военной техники. Таким образом, они стали заметными целями союзных войск, в основном русских. Сильно разбомбленные и поврежденные заводы Audi, однако, справились с этим разрушением того, что осталось
+				</li>
+				<li>
+					Первый краш-тест в истории производства автомобилей состоялся, когда Audi организовала серию тестов в 1938 году. Сегодня краш-тесты являются стандартной практикой для всех автомобильных компаний.
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЕЩЕ ЧТО ТО ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+</topic>
+
+	<!--Про инфинити-->
+<topic name="инфинити">
+	<category>
+		<pattern>РАССКАЖИ ПРО ЭТУ МАРКУ</pattern>
+		<template>
+			Это японский автопроизводитель, принадлежащий японской компании Nissan Motor. Автомобили Infiniti официально продают в США, Канаде, Мексике, странах Ближнего Востока, Республике Корее и в Тайване, а с 2006 года в России, Казахстане и в Украине, после в 2022 году вышла с рынка России. С момента основания Infiniti в 1989 году продано более двух миллионов автомобилей, большей частью в США.
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ ПРО ЭТОТ АВТОМОБИЛЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			Конкурс на лучший логотип «Инфинити», объявленный руководителями фирмы, был выигран представителями Lippincott Mercer. В начальном варианте он представлял дорогу, рассекающую земной шар и стремящуюся в бесконечную даль, к совершенству.
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЕЩЕ ЧТО ТО ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+</topic>
+
+	<!--Про митсубиси-->
+<topic name="митсубиси">
+	<category>
+		<pattern>РАССКАЖИ ПРО ЭТУ МАРКУ</pattern>
+		<template>
+			Это японский конгломерат, один из первых дзайбацу. Крупнейшие компании, входящие в его состав - Mitsubishi Corporation, Mitsubishi UFJ Financial Group, Mitsubishi Heavy Industries (в которую, в свою очередь, входят автомобилестроительный гигант Mitsubishi Motors, химический концерн Mitsubishi Chemical Holdings, корпорация Nikon и другие индустриальные активы). Штаб-квартира расположена в Токио.
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ ПРО ЭТОТ АВТОМОБИЛЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			Помимо производства потрясающих спортивных автомобилей, эта 148-летняя компания была одной из самых влиятельных производителей со времен Второй мировой войны, когда она производила самолеты под руководством доктора Дзиро Хориккоши. Это были самолеты, которые использовались пилотами-камикадзе на более поздних этапах войны.
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЕЩЕ ЧТО ТО ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+</topic>
+
+	<!--Про опель-->
+<topic name="опель">
+	<category>
+		<pattern>РАССКАЖИ ПРО ЭТУ МАРКУ</pattern>
+		<template>
+			Это немецкий производитель автомобилей, штаб-квартира расположена в Рюссельсхайме (Германия). Компания была основана 21 января 1862 года; к выпуску автомобилей приступили в 1899 году. С 1929 года принадлежала концерну General Motors. С 2017 года принадлежит концерну Groupe PSA (Stellantis).
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ ПРО ЭТОТ АВТОМОБИЛЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			В 1924г. наследники Адама Опеля за счет кредитных средств значительно модернизировали производство, в результате чего Опель стал первым автопроизводителем Германии, внедрившим конвейерный метод сборки, что, кстати говоря, в те времена было серьезным достижением, особенно в автомобильной отрасли и особенно в Европе. За счет внедрения инновационных методов производства и сборки, повысивших производительность, доля Опеля на рынке Германии составила без малого 40%, что опять-же весьма внушительно даже по сегодняшним меркам.
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЕЩЕ ЧТО ТО ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+</topic>
+
+	<!--Про сузуки-->
+<topic name="сузуки">
+	<category>
+		<pattern>РАССКАЖИ ПРО ЭТУ МАРКУ</pattern>
+		<template>
+			Это японская машиностроительная компания. Штаб-квартира — в городе Хамамацу, префектура Сидзуока. В списке крупнейших публичных компаний мира Forbes Global 2000 за 2022 год Suzuki Motor заняла 560-е место.
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ ПРО ЭТОТ АВТОМОБИЛЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>РАССКАЖИ ПРО ЭТУ МАРКУ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<random>
+				<li>Осаму Сузуки был у руля компании в течение последних 30 лет, это около 20 лет после того, как он фактически присоединился. Компания была основана дедушкой его жены.</li>
+				<li>Suzuki пришел на Индийский автомобильный рынок довольно рано - в 1980-х годах, и теперь maruti Suzuki India Ltd unit является крупнейшим рынком Suzuki за пределами Японии, продавая автомобили половине индийской нации.</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЕЩЕ ЧТО ТО ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЕ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>А ЧТО ТЫ ЕЩЕ ЗНАЕШЬ</srai>
+		</template>
+	</category>
+</topic>
+
+<topic name="без темы">
+	<category>
+		<pattern>ДА</pattern>
+		<template>
+			<random>
+				<li>
+					Отлично, давайте поговорим о машинах.
+					У вас есть личный <set name="topic">автомобиль</set>?
+				</li>
+				<li>
+					Хорошо, Давайте поговорим о машинах.
+					У вас есть личный <set name="topic">автомобиль</set>?
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ</pattern>
+		<template>
+			<srai>ДА</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>НЕТ</pattern>
+		<template>
+			Тогда, чем еще я могу вам помочь?
+		</template>
+	</category>
+</topic>
+
+	<!--Подсказки по топикам-->
+<category>
+	<pattern> * </pattern>
+	<template>
+		Извините я вас не понимаю.
+		<condition name="topic">
+			<li value="имя">Я ожидал имя.</li>
+			<li value="машинах">Я ожидал название марки автомобиля.</li>
+			<li value="опель">Я ожидал, что вы спросите, что я знаю про этот автомобиль.</li>
+			<li value="митсубиси">Я ожидал, что вы спросите, что я знаю про этот автомобиль.</li>
+			<li value="инфинити">Я ожидал, что вы спросите, что я знаю про этот автомобиль.</li>
+			<li value="ауди">Я ожидал, что вы спросите, что я знаю про этот автомобиль.</li>
+			<li value="ситроен">Я ожидал, что вы спросите, что я знаю про этот автомобиль.</li>
+			<li value="хендай">Я ожидал, что вы спросите, что я знаю про этот автомобиль.</li>
+			<li value="мерседес">Я ожидал, что вы спросите, что я знаю про этот автомобиль.</li>
+			<li value="сузуки">Я ожидал, что вы спросите, что я знаю про этот автомобиль.</li>
+			<li value="автомобиль">Я ожидал ответа ДА или НЕТ.</li>
+			<li value="распознать">Я ожидал ответа ДА или НЕТ.</li>
+			<li value="без темы">Я ожидал ответа ДА или НЕТ.</li>
+			<li>Может лучше поговорим о автомобилях?
+				<think>
+					<set name="topic">без темы</set>
+				</think>
+			</li>
+		</condition>
+	</template>
+</category>
+
+</aiml>
